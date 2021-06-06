@@ -64,8 +64,8 @@ namespace AvtoLider.Pages.PagesOfAdmin
                 {
                     try
                     {
-                        string loginChek = "SELECT * FROM Users WHERE Login ='" + _currentUser.Login + "'";
-                        var sql = bdAvtoLiderEntities.GetContext().Users.SqlQuery(loginChek).ToArray();
+                        string loginCheck = "SELECT * FROM Users WHERE Login ='" + _currentUser.Login + "'";
+                        var sql = bdAvtoLiderEntities.GetContext().Users.SqlQuery(loginCheck).ToArray();
                         if (sql.Length != 0)
                         {
                             MessageBox.Show("Пользователь с данным логином уже существует", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -84,7 +84,7 @@ namespace AvtoLider.Pages.PagesOfAdmin
                         MessageBox.Show(en.Message.ToString());
                     }
                 }
-                if (_currentUser.Id != 0)
+                else if (_currentUser.Id != 0)
                 {
                     try
                     {
