@@ -1,0 +1,27 @@
+﻿<Page x:Class="AvtoLider.Pages.PageAutorization"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AvtoLider.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="pageAutorization">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Авторизация" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="40" FontSize="20"></TextBlock>
+            <TextBlock Text="Введите логин:" HorizontalAlignment="Center" VerticalAlignment="Top"  Width="130" Height="16"></TextBlock>
+            <TextBox Name="tbLogin" HorizontalAlignment="Center" VerticalAlignment="Top"  Width="130" Height="22" FontFamily="Century Gothic"></TextBox>
+            <TextBlock Text="Введите пароль:" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5" Width="130" Height="16"></TextBlock>
+            <PasswordBox Width="130" Height="22" x:Name="pbPass" HorizontalAlignment="Center" VerticalAlignment="Top"  Background="White" FontFamily="Century Gothic" />
+            <TextBox x:Name="tbPass" Width="130" Height="22" Margin="10 -22 0 0"  Visibility="Hidden"></TextBox>
+            <Button Background="Transparent" Width="30" Margin="0 -24 -15 0" HorizontalAlignment="Right" Style="{StaticResource CheckPass}" Height="25"
+                x:Name="btnPass" PreviewMouseLeftButtonDown="btnPass_PreviewMouseLeftButtonDown" PreviewMouseLeftButtonUp="btnPass_PreviewMouseLeftButtonUp" >
+                <Image>
+                </Image>
+            </Button>
+            <Button Content="Вход" Width="130"  HorizontalAlignment="Center" Margin="0 20 0 0" VerticalAlignment="Bottom" Name="btnLogin" Click="btnLogin_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Page>

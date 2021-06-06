@@ -1,0 +1,41 @@
+﻿<Page x:Class="AvtoLider.Pages.PagesOfManager.PagesAddEdit.PageAddEditConfigurations"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AvtoLider.Pages.PagesOfManager.PagesAddEdit"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageAddEditConfigurations">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.ColumnSpan="2" FontSize="20" VerticalAlignment="Top" Margin="20" Text="Добавление (изменение) данных об конфигурациях"></TextBlock>
+        <TextBlock Text="Клиент" VerticalAlignment="Bottom" Margin="18" HorizontalAlignment="Right"></TextBlock>
+        <TextBlock Text="Автомобиль" Grid.Row="1" HorizontalAlignment="Right" Margin="15"></TextBlock>
+        <TextBlock Text="Диски" Grid.Row="2" HorizontalAlignment="Right" Margin="15"></TextBlock>
+        <TextBlock Text="Покрытие" Grid.Row="3" HorizontalAlignment="Right" Margin="15"></TextBlock>
+        <TextBlock Text="Шины" Grid.Row="4" HorizontalAlignment="Right" Margin="15"></TextBlock>
+        <TextBlock Text="Цвет" Grid.Row="5" HorizontalAlignment="Right" Margin="15"></TextBlock>
+        <ComboBox SelectedItem="{Binding Clients}" DisplayMemberPath="LastName" Name="cbClients" Grid.Column="1" VerticalAlignment="Bottom" Margin="15"></ComboBox>
+        <ComboBox SelectedItem="{Binding Cars}" DisplayMemberPath="Model" Name="cbModels" Grid.Column="1" Grid.Row="1" Margin="15"></ComboBox>
+        <ComboBox SelectedItem="{Binding TypesOfRims}" DisplayMemberPath="Title" Name="cbRims" Grid.Column="1" Grid.Row="2" Margin="15"></ComboBox>
+        <ComboBox SelectedItem="{Binding TypesOfCover}" DisplayMemberPath="Title" Name="cbCover" Grid.Column="1" Grid.Row="3" Margin="15"></ComboBox>
+        <ComboBox SelectedItem="{Binding TypesOfTires}" DisplayMemberPath="Title" Name="cbTires" Grid.Column="1" Grid.Row="4" Margin="15"></ComboBox>
+        <TextBox Text="{Binding Color}" MaxLength="50" Grid.Column="1" Grid.Row="5" Margin="15"></TextBox>
+        <Button Content="Сохранить" Grid.ColumnSpan="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="6" Name="btnSave" Click="btnSave_Click"></Button>
+        <Button Content="Отмена" Grid.ColumnSpan="2" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Row="6" Name="btnCancel" Click="btnCancel_Click"></Button>
+    </Grid>
+</Page>

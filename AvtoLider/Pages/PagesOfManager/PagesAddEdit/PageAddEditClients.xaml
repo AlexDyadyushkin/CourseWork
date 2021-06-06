@@ -1,0 +1,43 @@
+﻿<Page x:Class="AvtoLider.Pages.PagesOfManager.PagesAddEdit.PageAddEditClients"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AvtoLider.Pages.PagesOfManager.PagesAddEdit"
+      xmlns:mask="http://schemas.xceed.com/wpf/xaml/toolkit"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageAddEditClients">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="160"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.ColumnSpan="2" FontSize="20" VerticalAlignment="Top" Margin="50" Text="Добавление (изменение) данных об клиентах"></TextBlock>
+        <TextBlock Text="Имя" VerticalAlignment="Bottom" Margin="18" HorizontalAlignment="Right"></TextBlock>
+        <TextBlock Text="Фамилия" Grid.Row="1" HorizontalAlignment="Right" Margin="15"></TextBlock>
+        <TextBlock Text="Электронная почта" Grid.Row="2" HorizontalAlignment="Right" Margin="15"></TextBlock>
+        <TextBlock Text="Номер телефона" Grid.Row="3" HorizontalAlignment="Right" Margin="15"></TextBlock>
+        <TextBlock Text="Дата рождения" Grid.Row="4" HorizontalAlignment="Right" Margin="15"></TextBlock>
+        <TextBox Text="{Binding FirstName}" MaxLength="50" Grid.Column="1" VerticalAlignment="Bottom" Margin="15"></TextBox>
+        <TextBox Text="{Binding LastName}" MaxLength="50" Grid.Column="1" Grid.Row="1" Margin="15"></TextBox>
+        <TextBox Text="{Binding Email}" MaxLength="50" Grid.Column="1" Grid.Row="2" Margin="15"></TextBox>
+        <mask:MaskedTextBox Grid.Column="1" Grid.Row="3" ToolTip="Введите номер телефона" x:Name="tbPhone" Mask="+7 (000)-000-00-00" Margin="15 0 0 0" Text="{Binding PhoneNumber}" Width="130" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center"></mask:MaskedTextBox>
+        <TextBox Text="{Binding Birthday, StringFormat=dd/MM/yyyy}" Name="tbBirth" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" Margin="15 0 0 0" Width="130"></TextBox>
+        <Button Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" Margin="170 0 0 0" Style="{StaticResource Calendar}" Name="btnCalVisible" Click="btnCalVisible_Click" Width="50" Background="Transparent"></Button>
+        <Grid Grid.ColumnSpan="2" Grid.RowSpan="6" HorizontalAlignment="Center" VerticalAlignment="Center" Name="grCal" Visibility="Collapsed" Panel.ZIndex="10">
+            <Calendar  Grid.Column="1" Grid.Row="4" Name="calBirth" FirstDayOfWeek="Monday" DisplayDate="01.01.2000" HorizontalAlignment="Left" Margin="170 0 0 0" SelectedDatesChanged="calBirth_SelectedDatesChanged"></Calendar>
+        </Grid>
+        <Button Content="Сохранить" Grid.ColumnSpan="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="5" Name="btnSave" Click="btnSave_Click"></Button>
+        <Button Content="Отмена" Grid.ColumnSpan="2" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Row="5" Name="btnCancel" Click="btnCancel_Click"></Button>
+    </Grid>
+</Page>
