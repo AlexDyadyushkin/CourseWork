@@ -103,69 +103,6 @@ namespace AvtoLider.Pages
                 MessageBox.Show("Введите логин и пароль", "Вход не выполнен", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-
-            /*try
-            {
-                if (tbLogin.Text == "" && pbPass.Password != "")
-                {
-                    MessageBox.Show("Введите логин", "Вход не выполнен", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-                else if ((tbLogin.Text != "" && pbPass.Password == ""))
-                {
-                    MessageBox.Show("Введите пароль", "Вход не выполнен", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-                else if (tbLogin.Text == "" && pbPass.Password != "")
-                {
-                    MessageBox.Show("Введите логин и пароль", "Вход не выполнен", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-                int n = 0;
-                foreach (var user in bdAvtoLiderEntities.GetContext().Users)
-                {
-                    if (tbLogin.Text == user.Login && pbPass.Password == user.Password)
-                    {
-                        if (user.RoleId == 1)
-                        {
-                            MessageBox.Show("Вы вошли как администратор!", "Вход выполнен", MessageBoxButton.OK, MessageBoxImage.Information);
-                            ClassManager.baseFrame.Navigate(new PagesOfAdmin.PageAdmin());
-                        }
-                        else if (user.RoleId == 2)
-                        {
-                            MessageBox.Show("Вы вошли как менеджер!", "Вход выполнен", MessageBoxButton.OK, MessageBoxImage.Information);
-                            ClassManager.baseFrame.Navigate(new PagesOfManager.PageCars());
-                        }
-                        n = 0;
-                        addHistory(tbLogin.Text, true);
-                        break;                     
-                    }
-                    else if (tbLogin.Text != user.Login && pbPass.Password == user.Password && pbPass.Password != "")
-                    {
-                        MessageBox.Show("Неправильно введён логин", "Вход не выполнен", MessageBoxButton.OK, MessageBoxImage.Error);
-                        n = 0;
-                        break;
-
-                    }
-                    else if (tbLogin.Text == user.Login && pbPass.Password != user.Password && pbPass.Password != "")
-                    {
-                        MessageBox.Show("Неправильно введён пароль", "Вход не выполнен", MessageBoxButton.OK, MessageBoxImage.Error);
-                        n = 0;
-                        break;
-                    }
-                    else
-                    {
-                        n++;
-                    }
-                }
-                if (n == 1 && (tbLogin.Text != "" && pbPass.Password != ""))
-                {
-                    MessageBox.Show("Неправильно введён логин и пароль", "Вход не выполнен", MessageBoxButton.OK, MessageBoxImage.Error);
-                    addHistory(tbLogin.Text, false);
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Отсутствует связь с базой", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            }*/
-
         }
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
